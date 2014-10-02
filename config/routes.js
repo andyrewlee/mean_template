@@ -1,6 +1,6 @@
 var users = require('./../server/controllers/users.js');
 
-module.exports = function Routes(app, io){
+module.exports = function Routes(app){
   app.get('/', function(req,res) { req.session.page = 'index'; console.log('request', req.session); users.index(req,res) });
   app.get('/users', function(req,res) { req.session.name = 'mike' ; console.log('REQUEST', req.session); users.index(req,res) });
   app.get('/users/index.json', function(req,res) { users.index_json(req,res) });
